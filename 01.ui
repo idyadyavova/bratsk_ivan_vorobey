@@ -1,0 +1,595 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>871</width>
+    <height>759</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">*{
+font: 12pt &quot;Inter Semi Bold&quot;;
+}
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">* {
+background-color: #1a2339;
+color: rgb(255, 253, 244);
+
+
+}
+QPushButton{
+	Border: 1px solid;
+	border-radius: 10px;
+	border-color:rgb(236, 236, 236);
+	background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(52, 63, 96, 255), stop:1 rgba(24, 37, 64, 255));
+	padding:10px;
+	border-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 144, 202, 255), stop:1 rgba(0, 207, 177, 255));
+}
+QPushButton:hover{
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 144, 202, 255), stop:1 rgba(0, 207, 177, 255));
+	border-color: rgba(0,0,0,0);
+}</string>
+   </property>
+   <layout class="QGridLayout" name="gridLayout_2">
+    <item row="1" column="0">
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="styleSheet">
+       <string notr="true">
+QTabWidget::pane { 
+border: 0; 
+}
+QTabBar{
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(55, 66, 100, 255), stop:1 rgba(43, 54, 85, 255));
+border-radius:17px;
+}
+
+QTabBar::tab {
+	border: 1px solid;
+	border-radius:17px;
+	background: rgba(0, 0, 0, 0);
+  padding: 10px;
+	border-color: rgba(0, 0, 0, 0);
+ }
+
+ QTabBar::tab:selected {
+border-color: rgba(0, 0, 0, 0);
+border-radius:17px;
+  background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 144, 202, 255), stop:1 rgba(0, 207, 177, 255));
+ }
+QProgressBar {
+    border: 1px solid grey;
+    border-radius: 5px;
+    text-align: center;
+	padding:0px;
+}
+QProgressBar::chunk {
+    background-color: #05B8CC;
+    width: 20px;
+    border-radius: 0px;
+}</string>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tab">
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <attribute name="title">
+        <string>Загрузка файлов</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_5">
+        <item row="4" column="0">
+         <widget class="QComboBox" name="comboBox">
+          <property name="styleSheet">
+           <string notr="true">
+QComboBox {
+    border-radius: 10px;
+    padding: 1px 18px 1px 3px;
+    background: transparent; 
+    border: 1px solid; 
+	color: #fbfefd;
+	padding:7px;
+	border-color:#4f5d83;
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(55, 66, 100, 255), stop:1 rgba(43, 54, 85, 255));
+}
+
+QComboBox:on {
+    color: #fbfefd;
+    background-color:  qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 144, 202, 255), stop:1 rgba(0, 207, 177, 255));
+}
+
+
+QComboBox QAbstractItemView {
+font-size:15px;
+    outline: 1px solid rgba(0 ,0 ,0,0 );
+    border: 1px solid; 
+border-radius: 10px;
+	color: #fbfefd;
+	padding:10px;
+	border-color:#4f5d83;
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(55, 66, 100, 255), stop:1 rgba(43, 54, 85, 255));
+    selection-color: rgb(196, 227, 209);
+    selection-background-color:rgba(0, 0, 0, 0);
+}
+
+/* Drop -down box arrow style */
+QComboBox::drop-down {
+    subcontrol-origin: padding;/* The original point rectangle in the parent element. If this attribute is not specified, the default is padding. */
+    subcontrol-position: top right;/* Position of the drop -down box (upper right) */
+    width: 30px;/* The width of the drop -down box */
+    border-left-width: 1px;/* The left bound line width of the drop -down box */
+    border-left-color: rgba(0, 0, 0, 0);/* The left bound line of the drop -down box */
+    border-left-style: solid; /* The left bound line of the drop -down box is the real line */
+    border-top-right-radius: 3px;/* The rounded corner radius of the upper right boundary line of the drop -down box (should be consistent with the rounded radius of the entire QCOMBOBOX right upper right boundary line) */
+    border-bottom-right-radius: 3px; /* Ibid above */
+  background: rgba(0,0,0,0);
+}
+
+
+/* Pulling arrow style */
+QComboBox::down-arrow {
+    width: 15px;/* The width of the drop-down arrow (recommended to be the same as the width of the drop-down of the drop-down box) */
+    background: rgba(0,0,0,0);
+    padding: 0px 0px 0px 0px;/* Upper inner border, right inner side spacing, lower inner side spacing, left inward spacing */
+    image: url(&quot;combobox_arrow_down.png&quot;);
+}
+
+/* Click on the drop -down arrow style */
+QComboBox::down-arrow:on {
+    image: url(&quot;combobox_arrow_down.png&quot;);/* Display the pull on the arrow */
+}</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>Стандартная</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Асинхронная (beta)</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="add_file_button">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="MinimumExpanding" vsizetype="Minimum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
+          <property name="text">
+           <string>Добавить</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="0">
+         <widget class="QPushButton" name="save_button">
+          <property name="text">
+           <string>Загрузить</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QLabel" name="label_4">
+          <property name="text">
+           <string>Тип загрузки</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QTextBrowser" name="textBrowser_2">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Maximum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">Border: 1px solid;
+border-radius: 10px;
+border-color:rgb(177, 177, 177);</string>
+          </property>
+          <property name="html">
+           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Inter Semi Bold'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:18pt; font-weight:600; color:#ececec;&quot;&gt;Stream&lt;/span&gt;&lt;span style=&quot; font-size:18pt; font-weight:600; color:#5eb0f7;&quot;&gt;Sync&lt;/span&gt;&lt;span style=&quot; font-size:18pt; font-weight:600; color:#1a1a1a;&quot;&gt; &lt;/span&gt;&lt;span style=&quot; font-size:18pt; font-weight:600; color:#ff7e7e;&quot;&gt;Pro+&lt;/span&gt;&lt;span style=&quot; font-size:11pt; font-weight:600; font-style:italic; text-decoration: underline; color:#ff7e7e; vertical-align:super;&quot;&gt;(Beta версия)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QGroupBox" name="groupBox_2">
+          <property name="styleSheet">
+           <string notr="true">QGroupBox{
+font-size:20px;
+Border: none;
+	border-radius: 10px;
+	border-color:rgb(236, 236, 236);
+margin:10px;
+margin-left:0px;
+margin-right:0px;
+}</string>
+          </property>
+          <property name="title">
+           <string>Очередь</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_4">
+           <item row="0" column="0">
+            <widget class="QListWidget" name="file_list_widget">
+             <property name="styleSheet">
+              <string notr="true">margin-top: 17px;
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(55, 66, 99, 255), stop:1 rgba(18, 32, 57, 255));
+Border: 1px solid;
+border-radius: 10px;
+border-color:rgb(177, 177, 177);</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="6" column="0">
+         <widget class="QGroupBox" name="groupBox">
+          <property name="styleSheet">
+           <string notr="true">QGroupBox{
+Border: 1px solid;
+border-radius: 10px;
+border-color:rgb(177, 177, 177);
+
+}</string>
+          </property>
+          <property name="title">
+           <string>Загрузка</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout">
+           <item row="1" column="1">
+            <widget class="QProgressBar" name="global_progress">
+             <property name="value">
+              <number>0</number>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label">
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
+             <property name="text">
+              <string>Всего загружено</string>
+             </property>
+            </widget>
+           </item>
+           <item row="7" column="0" colspan="2">
+            <widget class="QLabel" name="label_2">
+             <property name="font">
+              <font>
+               <family>Inter Semi Bold</family>
+               <pointsize>12</pointsize>
+               <weight>50</weight>
+               <italic>false</italic>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>Загружается 0 из 0</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="0">
+            <widget class="QLabel" name="label_3">
+             <property name="text">
+              <string>Тукущая загрузка</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <widget class="QProgressBar" name="current_progress">
+             <property name="minimum">
+              <number>0</number>
+             </property>
+             <property name="value">
+              <number>0</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="invertedAppearance">
+              <bool>false</bool>
+             </property>
+             <property name="format">
+              <string>%p%</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="Line" name="line">
+             <property name="styleSheet">
+              <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_2">
+       <property name="styleSheet">
+        <string notr="true">QTabBar::tab {
+	margin-right:0px;
+ }</string>
+       </property>
+       <attribute name="title">
+        <string>История</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_6">
+        <item row="1" column="0">
+         <widget class="QTreeWidget" name="treeWidget">
+          <property name="styleSheet">
+           <string notr="true">QTreeView{
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(25, 34, 59, 255), stop:1 rgba(24, 30, 48, 255));
+alternate-background-color: rgb(255, 159, 75);
+
+/* qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 144, 202, 255), stop:1 rgba(0, 207, 177, 255))
+qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(25, 34, 59, 255), stop:1 rgba(24, 30, 48, 255))*/
+}</string>
+          </property>
+          <column>
+           <property name="text">
+            <string notr="true">1</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QTextBrowser" name="textBrowser_3">
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">Border: 1px solid;
+border-radius: 10px;
+border-color:rgb(177, 177, 177);</string>
+          </property>
+          <property name="html">
+           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Inter Semi Bold'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:18pt; font-weight:600; color:#ececec;&quot;&gt;Stream&lt;/span&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:18pt; font-weight:600; color:#5fa9f7;&quot;&gt;Sync&lt;/span&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:18pt; font-weight:600; color:#1a1a1a;&quot;&gt; &lt;/span&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:18pt; font-weight:600; color:#ff7e7e;&quot;&gt;Pro+&lt;/span&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:11pt; font-weight:600; font-style:italic; text-decoration: underline; color:#ff7e7e; vertical-align:super;&quot;&gt;(Beta версия)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QDockWidget" name="dockWidget">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="baseSize">
+    <size>
+     <width>10</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(16, 25, 46);</string>
+   </property>
+   <property name="floating">
+    <bool>false</bool>
+   </property>
+   <property name="features">
+    <set>QDockWidget::AllDockWidgetFeatures</set>
+   </property>
+   <property name="allowedAreas">
+    <set>Qt::AllDockWidgetAreas</set>
+   </property>
+   <property name="windowTitle">
+    <string>О программе</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>2</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents">
+    <layout class="QGridLayout" name="gridLayout_3">
+     <property name="leftMargin">
+      <number>0</number>
+     </property>
+     <property name="topMargin">
+      <number>0</number>
+     </property>
+     <property name="rightMargin">
+      <number>0</number>
+     </property>
+     <property name="bottomMargin">
+      <number>0</number>
+     </property>
+     <property name="spacing">
+      <number>0</number>
+     </property>
+     <item row="0" column="0">
+      <widget class="QTextBrowser" name="textBrowser">
+       <property name="html">
+        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Inter Semi Bold'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:18pt; font-weight:600; color:#ffffff;&quot;&gt;Stream&lt;/span&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:18pt; font-weight:600; color:#1144ff;&quot;&gt;Sync &lt;/span&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:18pt; font-weight:600; color:#ff6f6f;&quot;&gt;Pro+&lt;/span&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:8pt;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:8pt;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:8pt; color:#ffffff;&quot;&gt;Создатель: IVAN &lt;br /&gt;telegram:&lt;/span&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:8pt;&quot;&gt; &lt;/span&gt;&lt;a href=&quot;t.me/ByteBunch&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:8pt; text-decoration: underline; color:#0000ff;&quot;&gt;@ByteBunch&lt;br /&gt;&lt;/span&gt;&lt;/a&gt;&lt;a href=&quot;t.me/ByteBunch&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:14pt; text-decoration: underline; color:#ff0004;&quot;&gt;V&lt;/span&gt;&lt;/a&gt;&lt;a href=&quot;t.me/ByteBunch&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:14pt; text-decoration: underline; color:#ffffff;&quot;&gt;e&lt;/span&gt;&lt;/a&gt;&lt;a href=&quot;t.me/ByteBunch&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:14pt; text-decoration: underline; color:#ff0004;&quot;&gt;rs&lt;/span&gt;&lt;/a&gt;&lt;a href=&quot;t.me/ByteBunch&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:14pt; text-decoration: underline; color:#ffffff;&quot;&gt;on&lt;/span&gt;&lt;/a&gt;&lt;a href=&quot;t.me/ByteBunch&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:14pt; text-decoration: underline; color:#ff0004;&quot;&gt;: 1.&lt;/span&gt;&lt;/a&gt;&lt;a href=&quot;t.me/ByteBunch&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:14pt; text-decoration: underline; color:#1bd16d;&quot;&gt;0&lt;/span&gt;&lt;/a&gt;&lt;a href=&quot;t.me/ByteBunch&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:14pt; text-decoration: underline; color:#ff0004;&quot;&gt; BE&lt;/span&gt;&lt;/a&gt;&lt;a href=&quot;t.me/ByteBunch&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:14pt; text-decoration: underline; color:#ff9335;&quot;&gt;TA&lt;br /&gt;&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:8pt; color:#ffffff;&quot;&gt;Подключеный Logger: Отсутствует&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:8.25pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:11pt; font-weight:600;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:11pt; font-weight:600; color:#ffffff;&quot;&gt;Это програма для скачивания файлов формата M3U8. &lt;/span&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:8pt; color:#ffffff;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:10pt; color:#ffffff;&quot;&gt;Для того, чтобы скачать файл:&lt;/span&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:8pt; color:#ffffff;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:10pt; color:#ffffff;&quot;&gt;1) Нажмите на кнопку &amp;quot;Добавить&amp;quot; и выберите файл &amp;quot;.m3u8&amp;quot;&lt;/span&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:10pt;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; color:#e80003;&quot;&gt;!! Файлы &amp;quot;master.m3u8&amp;quot; еще не поддерживаются !!&lt;/span&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:10pt;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:10pt; color:#ffffff;&quot;&gt;2) Далее введите название m3u8 файла и нажмите &amp;quot;ОК&amp;quot;&lt;br /&gt;3) По двойному клику по файлу из списка можно выбрать и изменить дополнительные настройки. &lt;br /&gt;4) Далее нажимаем на кнопку &amp;quot;Загрузить&amp;quot; и ждем окончания загрузки&lt;br /&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;right&quot; style=&quot;-qt-paragraph-type:empty; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:8.25pt; color:#ffffff;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;right&quot; style=&quot;-qt-paragraph-type:empty; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:10pt; font-style:italic; text-decoration: underline; color:#ffffff;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;right&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:10pt; font-style:italic; text-decoration: underline; color:#ffffff;&quot;&gt;В&lt;/span&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:10pt; font-style:italic; color:#ffffff;&quot;&gt;се права мои. Копия программы преследуется законом!&lt;br /&gt;2023-2023&lt;/span&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:10pt; color:#ffffff;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:8pt; color:#ffffff;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>871</width>
+     <height>56</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QMenuBar {
+    background: rgb(29, 37, 60);
+  	color: rgb(255, 255, 231);
+  	padding: 10px;
+    spacing: 3px; /* spacing between menu bar items */
+
+}
+
+QMenuBar::item {
+	padding:7px;
+
+    Border: 1px solid;
+	border-radius: 1px;
+	border-color:rgb(236, 236, 236);
+	background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(52, 63, 96, 255), stop:1 rgba(24, 37, 64, 255));
+	border-color: rgba(0, 0, 0, 0);
+}
+
+QMenuBar::item:selected { /* when selected using mouse or keyboard */
+   background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 144, 202, 255), stop:1 rgba(0, 207, 177, 255));
+	border-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 144, 202, 255), stop:1 rgba(0, 207, 177, 255));
+}
+
+QMenuBar::item:pressed {
+    background: rgb(33, 33, 33);
+}</string>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="styleSheet">
+     <string notr="true">QMenu {
+    background: rgb(29, 37, 60);
+  	color: rgb(255, 255, 231);
+  	padding: 10px;
+    spacing: 3px; /* spacing between menu bar items */
+}
+
+QMenu::item {
+    Border: 1px solid;
+	border-radius: 1px;
+	border-color:rgb(236, 236, 236);
+	background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(52, 63, 96, 255), stop:1 rgba(24, 37, 64, 255));
+	padding:7px;
+	border-color: rgba(0, 0, 0, 0);
+}
+
+QMenu::item:selected { /* when selected using mouse or keyboard */
+   background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 144, 202, 255), stop:1 rgba(0, 207, 177, 255));
+	border-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 144, 202, 255), stop:1 rgba(0, 207, 177, 255));
+}
+
+QMenu::item:pressed {
+    background: rgb(33, 33, 33);
+}</string>
+    </property>
+    <property name="title">
+     <string>Файл</string>
+    </property>
+    <widget class="QMenu" name="menuDump">
+     <property name="styleSheet">
+      <string notr="true">QMenu {
+    background: rgb(29, 37, 60);
+  	color: rgb(255, 255, 231);
+  	padding: 10px;
+    spacing: 3px; /* spacing between menu bar items */
+}
+
+QMenu::item {
+    Border: 1px solid;
+	border-radius: 1px;
+	border-color:rgb(236, 236, 236);
+	background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(52, 63, 96, 255), stop:1 rgba(24, 37, 64, 255));
+	padding:7px;
+	border-color: rgba(0, 0, 0, 0);
+}
+
+QMenu::item:selected { /* when selected using mouse or keyboard */
+   background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 144, 202, 255), stop:1 rgba(0, 207, 177, 255));
+	border-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 144, 202, 255), stop:1 rgba(0, 207, 177, 255));
+}
+
+QMenu::item:pressed {
+    background: rgb(33, 33, 33);
+}</string>
+     </property>
+     <property name="title">
+      <string>Dump</string>
+     </property>
+     <addaction name="action_CSV"/>
+     <addaction name="action_CSV_2"/>
+    </widget>
+    <addaction name="action"/>
+    <addaction name="separator"/>
+    <addaction name="menuDump"/>
+   </widget>
+   <addaction name="menu"/>
+  </widget>
+  <action name="action">
+   <property name="text">
+    <string>Выход</string>
+   </property>
+  </action>
+  <action name="action_CSV">
+   <property name="text">
+    <string>В CSV файл</string>
+   </property>
+  </action>
+  <action name="action_CSV_2">
+   <property name="text">
+    <string>из CSV файла</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
